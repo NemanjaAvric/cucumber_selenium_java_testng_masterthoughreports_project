@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="1" failed="6" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-09T14:19:12 CET" name="Suite" finished-at="2024-02-09T14:21:05 CET" duration-ms="113316">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-02-09T14:19:12 CET" name="Cucumber with TestNG Test" finished-at="2024-02-09T14:21:05 CET" duration-ms="113316">
+      <class name="org.example.runner.CucumberRunnerTests1">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:19:12 CET" name="setUpClass" finished-at="2024-02-09T14:19:13 CET" duration-ms="1447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@238ad8c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:19:13 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:19:35 CET" duration-ms="21484" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 7 'Hammers' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:19:35 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:19:50 CET" duration-ms="14594" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 1 'Hand Saws' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:19:50 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:20:04 CET" duration-ms="14446" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 3 'Wrenches' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:20:04 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:20:19 CET" duration-ms="15182" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 2 'Screwdrivers' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:20:19 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:20:34 CET" duration-ms="14642" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 5 'Pilers' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:20:34 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:20:48 CET" duration-ms="14126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:20:48 CET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-09T14:21:02 CET" duration-ms="14486" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Searching Hand Tools by Category"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Categories dropwdown scenarios"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at org.example.step_definitions.CategoriesDropdown_Steps.only_should_appear_on_page_and_nothing_else(CategoriesDropdown_Steps.java:55)
+at ✽.only 4 'Measures' should appear on page and nothing else(file:///C:/Users/Panonit/Desktop/cucumber-demo-webapp/src/test/resources/features/Categories.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:org.example.runner.CucumberRunnerTests1@21b2e768]" started-at="2024-02-09T14:21:02 CET" name="tearDownClass" finished-at="2024-02-09T14:21:05 CET" duration-ms="2765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- org.example.runner.CucumberRunnerTests1 -->
+    </test> <!-- Cucumber with TestNG Test -->
+  </suite> <!-- Suite -->
+</testng-results>
