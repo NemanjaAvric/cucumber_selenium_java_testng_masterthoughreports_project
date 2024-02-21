@@ -8,7 +8,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Common_Steps {
@@ -19,7 +23,7 @@ public class Common_Steps {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         if (System.getProperty("browser").equalsIgnoreCase("chrome")) {
-            this.driver = new ChromeDriver();
+            this.driver = new ChromeDriver(getChromeOptions());
         } else {
             this.driver = new FirefoxDriver();
         }
@@ -27,6 +31,17 @@ public class Common_Steps {
 
     public WebDriver getWebDriver() {
         return driver;
+    }
+
+    public ChromeOptions getChromeOptions() {
+        ChromeOptions options = new ChromeOptions();
+        //   options.addArguments("start-maximized");
+        options.addArguments("test-type");
+        options.addArguments("disable-notifications");
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("autofill.profile_enabled", false);
+        options.setExperimentalOption("prefs", prefs);
+        return options;
     }
 
 

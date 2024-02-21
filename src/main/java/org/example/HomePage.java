@@ -3,27 +3,44 @@ package org.example;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends AbstractPage {
 
-    @FindBy(xpath = "//*[@id=\"navbarSupportedContent\"]/ul/li[2]/a")
-    private WebElement categoriesButton;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")
+    private WebElement signupLoginButton;
+    @FindBy(id = "header")
+    private WebElement header;
 
-    @FindBy(xpath = "//*[@id=\"navbarSupportedContent\"]/ul/li[2]/ul/li[1]/a")
-    private WebElement handTools;
+    @FindBy(xpath = "/html/body")
+    private WebElement body;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a")
+    private WebElement loggedInAsUsernameInscription;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a")
+    private WebElement deleteAccountButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
 
-    public void goToHandToolsPage() {
-        categoriesButton.click();
-        handTools.click();
+    public void verifyIfThePageIsVisible() {
+        wait.until(ExpectedConditions.visibilityOf(header));
+        wait.until(ExpectedConditions.visibilityOf(body));
     }
 
+    public void clcikSignupLoginButton() {
+        wait.until(ExpectedConditions.numberOfWindowsToBe(1));
+        verifyIfThePageIsVisible();
+        wait.until(ExpectedConditions.elementToBeClickable(signupLoginButton));
+        signupLoginButton.click();
+    }
 
-    public WebElement getCategoriesButton() {
-        return categoriesButton;
+    public void verifyThatUserIsLoggedIn() {
+        wait.until(ExpectedConditions.visibilityOf(loggedInAsUsernameInscription));
+    }
+
+    public void clickDeleteAccount() {
+        deleteAccountButton.click();
     }
 }

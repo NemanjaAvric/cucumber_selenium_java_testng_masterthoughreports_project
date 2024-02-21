@@ -10,8 +10,5 @@
         <module name="cucumber-demo-webapp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cucumber-demo-webapp" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
