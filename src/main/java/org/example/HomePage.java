@@ -48,4 +48,5 @@ public class HomePage extends AbstractPage {
     public void clickDeleteAccount() {
         deleteAccountButton.click();
     }
+
 }

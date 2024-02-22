@@ -22,6 +22,8 @@ public class SignupLoginPage extends AbstractPage {
     private WebElement loginEmailInputField;
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/form/button")
     private WebElement loginButton;
+    @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[1]/div/form/p")
+    private WebElement yourEmailOrPasswordIsIncorrectInscription;
 
     public SignupLoginPage(WebDriver driver) {
         super(driver);
@@ -41,5 +43,9 @@ public class SignupLoginPage extends AbstractPage {
         loginEmailInputField.sendKeys(email);
         passwordInputField.sendKeys(password);
         loginButton.click();
+    }
+
+    public void verifyYourEmailOrPasswordIsIncorrectInscriptionIsVisible() {
+        wait.until(ExpectedConditions.visibilityOf(yourEmailOrPasswordIsIncorrectInscription));
     }
 }

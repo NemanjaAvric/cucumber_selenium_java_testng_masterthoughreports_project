@@ -20,7 +20,6 @@ public class Registration_Steps {
 
     private AccountCreatedPage accountCreatedPage;
 
-    private AccountDeletedPage accountDeletedPage;
 
 
     public Registration_Steps(Common_Steps common_steps) {
@@ -29,7 +28,6 @@ public class Registration_Steps {
         this.signupLoginPage = new SignupLoginPage(driver);
         this.createAccountPage = new CreateAccountPage(driver);
         this.accountCreatedPage = new AccountCreatedPage(driver);
-        this.accountDeletedPage = new AccountDeletedPage(driver);
     }
 
     @Given("I am on the Home Page")

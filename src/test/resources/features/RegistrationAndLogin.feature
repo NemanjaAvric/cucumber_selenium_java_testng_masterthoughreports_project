@@ -22,7 +22,7 @@ Feature: Registration and Login scenarios
 
   Scenario Outline: Login with valid credentials and logout
     Given I am on the Home Page
-    When I login with valid email: '<email>' and valid password: '<password>'
+    When I login with email: '<email>' and password: '<password>'
     And Verify that I'm logged in
     Then Logout
 
@@ -39,9 +39,62 @@ Feature: Registration and Login scenarios
       | kineh96699@gexige.com    | TakadaItadori<3<3<3     |
       | makisekurisu96@gmail.com | Amadeus6:5:6            |
 
+
+  Scenario Outline: Try to login with invalid email
+    Given I am on the Home Page
+    When I login with email: '<email>' and password: '<password>'
+    Then Verify that I failed to log in
+
+    Examples:
+      | email                   | password                |
+      | moyzek92095@huizk.com   | elPsyCongroo@75         |
+      | cizek91115@gmail.com    | GOTOVINLAND998!!!!      |
+      | tigejjj834@lendfash.com | LeviIsSHORT321          |
+      | mexesp84838@ebuthor.com | hEaRts_A_hEaVy_BuRdEN<3 |
+      | 9maxofin42@hotmail.com  | tuTUtUUURuuuuu...       |
+      | 5393kaneki@yahoo.com    | @#Tatakae91#@@@         |
+      | gigaraa8888@gexige.com  | SasageyoSasageyo        |
+      | kiney11111@gexige.com   | TakadaItadori<3<3<3     |
+      | hiyajomaho96@gmail.com  | Amadeus6:5:6            |
+
+  Scenario Outline: Try to login with invalid credentials
+    Given I am on the Home Page
+    When I login with email: '<email>' and password: '<password>'
+    Then Verify that I failed to log in
+
+    Examples:
+      | email                   | password                |
+      | moyzek92095@huizk.com   | PsyCongroo@75el         |
+      | cizek91115@gmail.com    | fINLAND998!!!!GOTO      |
+      | tigejjj834@lendfash.com | LeviIsTALL123           |
+      | mexesp84838@ebuthor.com | hEaRts_A_LIGHT_BuRdEN<3 |
+      | 9maxofin42@hotmail.com  | gimmeTUtUUURuuuuu...    |
+      | 5393kaneki@yahoo.com    | @#ALGERIA@@91#@         |
+      | gigaraa8888@gexige.com  | HorizonLinked           |
+      | kiney11111@gexige.com   | TakadaFushiguro<3<3<3   |
+      | hiyajomaho96@gmail.com  | amadeuS5:5:5            |
+
+
+  Scenario Outline: Login with invalid password
+    Given I am on the Home Page
+    When I login with email: '<email>' and password: '<password>'
+    Then Verify that I failed to log in
+
+    Examples:
+      | email                    | password                |
+      | joyek92095@huizk.com     | PsyCongroo@75el         |
+      | zizek91115@gmail.com     | fINLAND998!!!!GOTO      |
+      | tigeyey834@lendfash.com  | LeviIsTALL123           |
+      | pexes84838@ebuthor.com   | hEaRts_A_LIGHT_BuRdEN<3 |
+      | 6naxofim42@hotmail.com   | gimmeTUtUUURuuuuu...    |
+      | 3295yaheki@yahoo.com     | @#ALGERIA@@91#@         |
+      | fiharag806@gexige.com    | HorizonLinked           |
+      | kineh96699@gexige.com    | TakadaFushiguro<3<3<3   |
+      | makisekurisu96@gmail.com | amadeuS5:5:5            |
+
   Scenario Outline: Login with valid credentials and delete the account
     Given I am on the Home Page
-    When I login with valid email: '<email>' and valid password: '<password>'
+    When I login with email: '<email>' and password: '<password>'
     And Verify that I'm logged in
     Then Delete the account
 
@@ -57,7 +110,5 @@ Feature: Registration and Login scenarios
       | fiharag806@gexige.com    | SasageyoSasageyo        |
       | kineh96699@gexige.com    | TakadaItadori<3<3<3     |
       | makisekurisu96@gmail.com | Amadeus6:5:6            |
-
-
 
 
