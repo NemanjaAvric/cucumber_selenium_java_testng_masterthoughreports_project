@@ -11,13 +11,14 @@ public class HomePage extends AbstractPage {
     private WebElement signupLoginButton;
     @FindBy(id = "header")
     private WebElement header;
-
     @FindBy(xpath = "/html/body")
     private WebElement body;
     @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a")
     private WebElement loggedInAsUsernameInscription;
     @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a")
     private WebElement deleteAccountButton;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[4]/a")
+    private WebElement logoutButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -38,6 +39,10 @@ public class HomePage extends AbstractPage {
 
     public void verifyThatUserIsLoggedIn() {
         wait.until(ExpectedConditions.visibilityOf(loggedInAsUsernameInscription));
+    }
+
+    public void clickLogoutButton() {
+        logoutButton.click();
     }
 
     public void clickDeleteAccount() {

@@ -57,7 +57,7 @@ public class Registration_Steps {
         }
     }
 
-    @When("Verify that account is created and I'm logged in")
+    @When("Verify that account is created and that I'm logged in")
     public void verify_that_account_is_created_and_i_m_logged_in() {
         accountCreatedPage.verifyAccountCreatedInscriptionAndClickContinueButton();
         Add.closeAdd(driver);
@@ -68,33 +68,13 @@ public class Registration_Steps {
         homePage.verifyThatUserIsLoggedIn();
     }
 
-    /*  @Then("Delete the account")
-      public void delete_the_account() {
-          Add.closeAdd(driver);
-          if (driver.getCurrentUrl().endsWith(URL.ADD_URL_ENDING)) {
-              homePage.clickDeleteAccount();
-          }
-          homePage.clickDeleteAccount();
-          if (driver.getCurrentUrl().endsWith(URL.ADD_URL_ENDING)) {
-              homePage.clickDeleteAccount();
-          }
-          Add.closeAdd(driver);
-          accountDeletedPage.confirmAccountDeleted();
-          Add.closeAdd(driver);
-      }*/
-    @Then("Delete the account")
-    public void delete_the_account() {
+    @Then("Logout")
+    public void log_out() {
         Add.closeAdd(driver);
-        homePage.clickDeleteAccount();
+        homePage.clickLogoutButton();
         Add.closeAdd(driver);
         if (driver.getCurrentUrl().endsWith(URL.ADD_URL_ENDING)) {
-            homePage.clickDeleteAccount();
-        }
-        Add.closeAdd(driver);
-        accountDeletedPage.confirmAccountDeleted();
-        Add.closeAdd(driver);
-        if (driver.getCurrentUrl().endsWith(URL.ADD_URL_ENDING)) {
-            accountDeletedPage.confirmAccountDeleted();
+            homePage.clickLogoutButton();
         }
         Add.closeAdd(driver);
     }
