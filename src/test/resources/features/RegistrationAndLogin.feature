@@ -20,6 +20,24 @@ Feature: Registration and Login scenarios
       | MAkise     | makisekurisu96@gmail.com | Mrs.  | Makise   | Amadeus6:5:6            | 6   | July      | 1996 | Makise    | Kurisu     | Amadeus Project           | 733 Ofélia Marginal, Rebordosa, WI 1110                       | Entrada Caridad Salazar 1 Puerta 763, Valladolid, And 36265       | Canada        | Montreal   | Montreal    | 690     | +13199019820 |
 
 
+  Scenario Outline: Try to register to Automation Exercise web app with existing email
+    Given I am on the Home Page
+    When I Sign up using '<username>' as username and '<email>' as email
+    Then Verify that account with that email already exists
+
+    Examples:
+      | username | email                    |
+      | InkeR    | joyek92095@huizk.com     |
+      | Memp     | zizek91115@gmail.com     |
+      | DGEn     | tigeyey834@lendfash.com  |
+      | QUIT     | pexes84838@ebuthor.com   |
+      | FIckRuN  | 6naxofim42@hotmail.com   |
+      | HOWEiNde | 3295yaheki@yahoo.com     |
+      | MBeD     | fiharag806@gexige.com    |
+      | rBanDe   | kineh96699@gexige.com    |
+      | AAkira   | makisekurisu96@gmail.com |
+
+
   Scenario Outline: Login with valid credentials and logout
     Given I am on the Home Page
     When I login with email: '<email>' and password: '<password>'

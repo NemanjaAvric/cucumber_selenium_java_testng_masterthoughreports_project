@@ -1,12 +1,15 @@
 package org.example.step_definitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.*;
+import org.example.pages.AccountCreatedPage;
+import org.example.pages.CreateAccountPage;
+import org.example.pages.HomePage;
+import org.example.pages.SignupLoginPage;
 import org.example.utility.Add;
 import org.example.utility.URL;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class Registration_Steps {
 
@@ -21,7 +24,6 @@ public class Registration_Steps {
     private AccountCreatedPage accountCreatedPage;
 
 
-
     public Registration_Steps(Common_Steps common_steps) {
         this.driver = common_steps.getWebDriver();
         this.homePage = new HomePage(driver);
@@ -30,17 +32,12 @@ public class Registration_Steps {
         this.accountCreatedPage = new AccountCreatedPage(driver);
     }
 
-    @Given("I am on the Home Page")
-    public void i_am_on_the_home_page() {
-        driver.get(URL.HOME_PAGE_URL);
-        Add.closeAdd(driver);
-    }
 
     @When("I Sign up using {string} as username and {string} as email")
-    public void i_sign_up_using_and(String username, String password) {
+    public void i_sign_up_using_and(String username, String email) {
         homePage.clcikSignupLoginButton();
         Add.closeAdd(driver);
-        signupLoginPage.signUp(username, password);
+        signupLoginPage.signUp(username, email);
         Add.closeAdd(driver);
     }
 
@@ -64,6 +61,12 @@ public class Registration_Steps {
         }
         Add.closeAdd(driver);
         homePage.verifyThatUserIsLoggedIn();
+    }
+
+    @Then("Verify that account with that email already exists")
+    public void verify_that_account_with_that_email_already_exists() {
+        signupLoginPage.verifyEmailAlreadyExistsIncriptionIsVisible();
+        Assert.assertEquals(driver.getCurrentUrl(), URL.SIGNUP_PAGE_URL);
     }
 
     @Then("Logout")

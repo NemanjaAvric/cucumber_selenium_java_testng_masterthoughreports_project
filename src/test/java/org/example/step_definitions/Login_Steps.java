@@ -2,9 +2,9 @@ package org.example.step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.AccountDeletedPage;
-import org.example.HomePage;
-import org.example.SignupLoginPage;
+import org.example.pages.AccountDeletedPage;
+import org.example.pages.HomePage;
+import org.example.pages.SignupLoginPage;
 import org.example.utility.Add;
 import org.example.utility.URL;
 import org.openqa.selenium.WebDriver;
@@ -62,7 +62,7 @@ public class Login_Steps {
     @Then("Verify that I failed to log in")
     public void verify_that_i_failed_to_log_in() {
         signupLoginPage.verifyYourEmailOrPasswordIsIncorrectInscriptionIsVisible();
-        Assert.assertEquals(driver.getCurrentUrl(), URL.SIGNUP_LOGIN_PAGE_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), URL.LOGIN_PAGE_URL);
     }
 
 }
