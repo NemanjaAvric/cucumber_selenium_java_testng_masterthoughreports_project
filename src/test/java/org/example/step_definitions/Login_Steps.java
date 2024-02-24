@@ -62,7 +62,7 @@ public class Login_Steps {
     @Then("Verify that I failed to log in")
     public void verify_that_i_failed_to_log_in() {
         signupLoginPage.verifyYourEmailOrPasswordIsIncorrectInscriptionIsVisible();
-        Assert.assertEquals(driver.getCurrentUrl(), URL.LOGIN_PAGE_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), URL.HOME_PAGE_URL + URL.LOGIN_PAGE_URL_ENDING);
     }
 
 }

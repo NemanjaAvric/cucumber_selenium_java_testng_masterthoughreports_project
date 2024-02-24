@@ -66,7 +66,7 @@ public class Registration_Steps {
     @Then("Verify that account with that email already exists")
     public void verify_that_account_with_that_email_already_exists() {
         signupLoginPage.verifyEmailAlreadyExistsIncriptionIsVisible();
-        Assert.assertEquals(driver.getCurrentUrl(), URL.SIGNUP_PAGE_URL);
+        Assert.assertEquals(driver.getCurrentUrl(), URL.HOME_PAGE_URL + URL.SIGNUP_PAGE_URL_ENDING);
     }
 
     @Then("Logout")

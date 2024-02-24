@@ -40,7 +40,7 @@ public class ContactUs_Steps {
         Add.closeAdd(driver);
         contactUsPage.verifyThatContactFormHasBeenSentAndGoToHomePage();
         Add.closeAdd(driver);
-        if (driver.getCurrentUrl().equals(URL.CONTACT_US_PAGE_URL + URL.ADD_URL_ENDING)) {
+        if (driver.getCurrentUrl().equals(URL.HOME_PAGE_URL + URL.CONTACT_US_PAGE_URL_ENDING + URL.ADD_URL_ENDING)) {
             contactUsPage.verifyThatContactFormHasBeenSentAndGoToHomePage();
             Add.closeAdd(driver);
         }

@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import org.example.pages.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +21,10 @@ public class HomePage extends AbstractPage {
     private WebElement logoutButton;
     @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[8]/a")
     private WebElement contactUsButton;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[5]/a")
+    private WebElement testCasesButton;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
+    private WebElement productsButton;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -54,6 +57,16 @@ public class HomePage extends AbstractPage {
 
     public void clickContactUsButton() {
         contactUsButton.click();
+    }
+
+    public void clickTestCasesButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(testCasesButton));
+        testCasesButton.click();
+    }
+
+    public void clickProductsButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(productsButton));
+        productsButton.click();
     }
 
 }

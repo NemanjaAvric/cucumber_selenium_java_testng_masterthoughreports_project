@@ -15,9 +15,7 @@
         <webdriver.manager.version>5.6.3</webdriver.manager.version>
         <testng.version>7.9.0</testng.version>
         <jackson.version>2.16.1</jackson.version>
-        <extentreports.version>5.1.1</extentreports.version>
         <cucumber-testng.version>7.15.0</cucumber-testng.version>
-        <httpclient5.version>5.2.1</httpclient5.version>
         <cucumber-java.version>7.15.0</cucumber-java.version>
         <!--  plugins versions  -->
         <maven.compiler.version>3.11.0</maven.compiler.version>
@@ -61,17 +59,6 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5</artifactId>
-            <version>${httpclient5.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.aventstack</groupId>
-            <artifactId>extentreports</artifactId>
-            <version>${extentreports.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
@@ -117,7 +104,7 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <browser>firefox</browser>
+                        <browser>chrome</browser>
                         <seleniumGridEnabled>false</seleniumGridEnabled>
                     </systemPropertyVariables>
                     <suiteXmlFiles>

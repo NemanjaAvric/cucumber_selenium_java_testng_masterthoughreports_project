@@ -1,7 +1,5 @@
 package org.example.pages;
 
-import com.aventstack.extentreports.util.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,7 +54,4 @@ public class ContactUsPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(getInTouchInscription));
     }
 
-    public void clickSubmitButton() {
-        submitButton.click();
-    }
 }
