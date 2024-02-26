@@ -23,7 +23,10 @@ public class Common_Steps {
 
     private WebDriver driver;
 
-    @Before
+    private Scenario scenario;
+
+
+    @Before(order = 0)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         if (System.getProperty("browser").equalsIgnoreCase("chrome")) {
@@ -32,6 +35,23 @@ public class Common_Steps {
             this.driver = new FirefoxDriver();
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+    }
+
+    @Before(order = 1)
+    public void browserInfo(Scenario scenario) {
+        this.scenario = scenario;
+        String browser = System.getProperty("browser");
+
+        String formattedBrowserInfo = "<p style=\"color:blue;\">Browser Information:</p>"
+                + "<ul>"
+                + "<li><strong>Browser:</strong> " + browser + "</li>"
+                + "</ul>";
+
+        if (browser != null) {
+            scenario.attach(formattedBrowserInfo, "text/html", "Browser Info - " + scenario.getName());
+        } else {
+            scenario.attach("Browser information not found", "text/plain", "Browser Info - " + scenario.getName());
+        }
     }
 
 

@@ -14,9 +14,10 @@
         <logback.version>1.4.14</logback.version>
         <webdriver.manager.version>5.6.3</webdriver.manager.version>
         <testng.version>7.9.0</testng.version>
-        <jackson.version>2.16.1</jackson.version>
         <cucumber-testng.version>7.15.0</cucumber-testng.version>
         <cucumber-java.version>7.15.0</cucumber-java.version>
+        <cucumber-picocontainer.version>7.15.0</cucumber-picocontainer.version>
+        <maven-cucumber-reporting.version>5.7.8</maven-cucumber-reporting.version>
         <!--  plugins versions  -->
         <maven.compiler.version>3.11.0</maven.compiler.version>
         <maven.dependency.version>3.6.0</maven.dependency.version>
@@ -46,13 +47,6 @@
             <version>${webdriver.manager.version}</version>
             <scope>test</scope>
         </dependency>
-        <!--  To deserialize json into Java object or vice versa  -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-            <scope>test</scope>
-        </dependency>
         <!--  Test framework  -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -76,17 +70,17 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
-            <version>7.15.0</version>
+            <version>${cucumber-picocontainer.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>maven-cucumber-reporting</artifactId>
-            <version>5.7.8</version>
+            <version>${maven-cucumber-reporting.version}</version>
         </dependency>
     </dependencies>
     <build>
-        <finalName>cucumber-gherkin-practice</finalName>
+        <finalName>cucumber-demo-webapp</finalName>
         <plugins>
             <!--  To compile the source code using specific java version. also to force IDE to change the settings  -->
             <plugin>
@@ -113,7 +107,7 @@
                     <properties>
                         <property>
                             <name>dataproviderthreadcount</name>
-                            <value>3</value>
+                            <value>1</value>
                         </property>
                     </properties>
                     <testFailureIgnore>true</testFailureIgnore>

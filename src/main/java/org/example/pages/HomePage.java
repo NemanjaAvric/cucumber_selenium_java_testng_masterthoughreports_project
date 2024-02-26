@@ -25,6 +25,17 @@ public class HomePage extends AbstractPage {
     private WebElement testCasesButton;
     @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[2]/a")
     private WebElement productsButton;
+    @FindBy(id = "susbscribe_email")
+    private WebElement subscriptionInputField;
+    @FindBy(id = "subscribe")
+    private WebElement subscriptionButton;
+    @FindBy(xpath = "//*[@id=\"footer\"]/div[1]/div/div/div[2]/div/h2")
+    private WebElement subscriptionInscription;
+    @FindBy(xpath = "//*[@id=\"success-subscribe\"]/div")
+    private WebElement youHaveBeenSuccessfullySubscribedInscription;
+    @FindBy(xpath = "//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[3]/a")
+    private WebElement cartIcon;
+
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -67,6 +78,29 @@ public class HomePage extends AbstractPage {
     public void clickProductsButton() {
         wait.until(ExpectedConditions.elementToBeClickable(productsButton));
         productsButton.click();
+    }
+
+    public void waitForSubscriptionInscriptionToBePresentOnThePage() {
+        wait.until(ExpectedConditions.visibilityOf(subscriptionInscription));
+    }
+
+    public WebElement getSubscriptionInscription() {
+        return subscriptionInscription;
+    }
+
+    public void subscribe(String email) {
+        wait.until(ExpectedConditions.elementToBeClickable(subscriptionInputField));
+        subscriptionInputField.sendKeys(email);
+        subscriptionButton.click();
+    }
+
+    public void verifyThatYouHaveBeenSuccessfullySubscribedInscriptionIsVisible() {
+        wait.until(ExpectedConditions.visibilityOf(youHaveBeenSuccessfullySubscribedInscription));
+    }
+
+    public void clickOnTheCartIcon(){
+        wait.until(ExpectedConditions.elementToBeClickable(cartIcon));
+        cartIcon.click();
     }
 
 }

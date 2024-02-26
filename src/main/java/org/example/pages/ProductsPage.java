@@ -22,6 +22,13 @@ public class ProductsPage extends AbstractPage {
     private WebElement searchedProductsInscription;
     @FindBy(xpath = "//div[@class='productinfo text-center']")
     private List<WebElement> searchResults;
+    @FindBy(xpath = "//a[@class='btn btn-default add-to-cart' and @data-product-id=1]")
+    private WebElement firstAddToCartButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-default add-to-cart' and @data-product-id=2]")
+    private WebElement secondAddToCartButton;
+    @FindBy(className = "btn-success")
+    private WebElement continueShoppingButton;
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -51,5 +58,16 @@ public class ProductsPage extends AbstractPage {
         }
     }
 
+
+    public void addFirstTwoProductsToCart() {
+        wait.until(ExpectedConditions.elementToBeClickable(firstAddToCartButton));
+        firstAddToCartButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
+        continueShoppingButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(secondAddToCartButton));
+        secondAddToCartButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
+        continueShoppingButton.click();
+    }
 
 }

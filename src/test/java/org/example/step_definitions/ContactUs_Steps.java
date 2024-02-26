@@ -27,6 +27,7 @@ public class ContactUs_Steps {
 
     @When("I navigate to the Contact us page, fill out the contact form and send it")
     public void i_navigate_to_the_contact_us_page_fill_out_the_contact_form_and_send_it() {
+        homePage.verifyIfThePageIsVisible();
         homePage.clickContactUsButton();
         Add.closeAdd(driver);
         contactUsPage.verifyThatGetInTouchInscriptionIsVisible();
@@ -46,6 +47,7 @@ public class ContactUs_Steps {
         }
         Assert.assertEquals(driver.getCurrentUrl(), URL.HOME_PAGE_URL);
     }
+
 
 
 }

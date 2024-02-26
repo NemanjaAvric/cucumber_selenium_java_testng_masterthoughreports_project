@@ -15,4 +15,6 @@ public class URL {
     public static final String PRODUCTS_PAGE_URL_ENDING="products";
 
     public static final String PRODUCT1_DETAIL_PAGE_URL_ENDING="product_details/1";
+
+    public static final String CART_PAGE_URL_ENDING="view_cart";
 }

@@ -1,5 +1,6 @@
 Feature: Registration and Login scenarios
 
+
   Scenario Outline: Register to Automation Exercise web app and logout
     Given I am on the Home Page
     When I Sign up using '<username>' as username and '<email>' as email
@@ -109,6 +110,7 @@ Feature: Registration and Login scenarios
       | fiharag806@gexige.com    | HorizonLinked           |
       | kineh96699@gexige.com    | TakadaFushiguro<3<3<3   |
       | makisekurisu96@gmail.com | amadeuS5:5:5            |
+
 
   Scenario Outline: Login with valid credentials and delete the account
     Given I am on the Home Page

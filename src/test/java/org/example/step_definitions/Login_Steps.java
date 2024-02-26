@@ -6,6 +6,7 @@ import org.example.pages.AccountDeletedPage;
 import org.example.pages.HomePage;
 import org.example.pages.SignupLoginPage;
 import org.example.utility.Add;
+import org.example.utility.Alerts;
 import org.example.utility.URL;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -28,6 +29,7 @@ public class Login_Steps {
 
     @When("I login with email: {string} and password: {string}")
     public void i_login_with_email_and_password(String email, String password) {
+        homePage.verifyIfThePageIsVisible();
         homePage.clcikSignupLoginButton();
         Add.closeAdd(driver);
         signupLoginPage.login(email, password);
@@ -64,5 +66,7 @@ public class Login_Steps {
         signupLoginPage.verifyYourEmailOrPasswordIsIncorrectInscriptionIsVisible();
         Assert.assertEquals(driver.getCurrentUrl(), URL.HOME_PAGE_URL + URL.LOGIN_PAGE_URL_ENDING);
     }
+
+
 
 }

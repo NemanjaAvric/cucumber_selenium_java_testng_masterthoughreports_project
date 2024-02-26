@@ -35,6 +35,7 @@ public class Registration_Steps {
 
     @When("I Sign up using {string} as username and {string} as email")
     public void i_sign_up_using_and(String username, String email) {
+        homePage.verifyIfThePageIsVisible();
         homePage.clcikSignupLoginButton();
         Add.closeAdd(driver);
         signupLoginPage.signUp(username, email);

@@ -2,13 +2,17 @@ package org.example.step_definitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.pages.CartPage;
 import org.example.pages.HomePage;
 import org.example.pages.ProductDetailPage;
 import org.example.pages.ProductsPage;
 import org.example.utility.Add;
 import org.example.utility.URL;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class Products_Steps {
 
@@ -20,17 +24,21 @@ public class Products_Steps {
 
     private ProductDetailPage productDetailPage;
 
+    private CartPage cartPage;
+
     public Products_Steps(Common_Steps common_steps) {
         this.driver = common_steps.getWebDriver();
         this.productsPage = new ProductsPage(driver);
         this.homePage = new HomePage(driver);
         this.productDetailPage = new ProductDetailPage(driver);
+        this.cartPage = new CartPage(driver);
 
     }
 
 
     @When("I go to the Products Page and verify that list of products is visible")
     public void i_go_to_the_products_page_and_verify_that_list_of_products_is_visible() {
+        homePage.verifyIfThePageIsVisible();
         homePage.clickProductsButton();
         Add.closeAdd(driver);
         if (driver.getCurrentUrl().equalsIgnoreCase(URL.HOME_PAGE_URL + URL.ADD_URL_ENDING)) {
@@ -68,5 +76,32 @@ public class Products_Steps {
     public void i_verify_that_the_results_of_the_search_is_visible() {
         productsPage.verifyThatSearchResultsAreVisible();
     }
+
+    @When("I add two of the products from the list to the cart")
+    public void i_add_two_of_the_products_from_the_list_to_the_cart() {
+        productsPage.addFirstTwoProductsToCart();
+        Add.closeAdd(driver);
+        homePage.clickOnTheCartIcon();
+        Add.closeAdd(driver);
+        if (driver.getCurrentUrl().equals(URL.HOME_PAGE_URL + URL.PRODUCTS_PAGE_URL_ENDING + URL.ADD_URL_ENDING)) {
+            homePage.clickOnTheCartIcon();
+            Add.closeAdd(driver);
+        }
+    }
+
+    @Then("I verify that the products are added to the cart and remove products from the cart and verify that the cart is empty")
+    public void i_verify_that_the_products_are_added_to_the_cart_and_remove_products_from_the_cart_and_verify_that_the_cart_is_empty() {
+        Assert.assertTrue(cartPage.verifySizeOfCartInfoTable());
+        Assert.assertTrue(cartPage.verifyCart());
+        cartPage.removeFromCart();
+        Add.closeAdd(driver);
+        if (driver.getCurrentUrl().equals(URL.HOME_PAGE_URL + URL.CART_PAGE_URL_ENDING + URL.ADD_URL_ENDING)) {
+            cartPage.removeFromCart();
+            Add.closeAdd(driver);
+        }
+        Assert.assertTrue(cartPage.verifyEmptyCart());
+
+    }
+
 
 }
